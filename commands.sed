@@ -10,4 +10,4 @@ s|^{% endinfobox %}|</div>|
 s|^{% apisection (.*) %}|<h1>\1</h1>|
 s|^{% endapisection %}||
 s|src="/assets/images/docs/api_illustrations/(.*)"|src="images/\1"|
-s|\]\((.*)/\)|](\1.html)|
+s|\]\(/api/[a-z]*/(.*)/\)|](\1.html)|

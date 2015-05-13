@@ -1,7 +1,7 @@
 body
 {
 	-webkit-font-smoothing: antialiased;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Helvetica Neue', sans-serif;
 	background: white;
 	color: #647276;
 }
@@ -198,27 +198,26 @@ table tr:nth-child(even),table td:nth-child(even) { background: rgba(200,200,200
 	padding: 10px;
 }
 
-pre, code
-{
-	font-family: Inconsolata, monospace;
-	background-color: #f3f3f3;
+code {
+	font-family: Menlo, monospace;
+	background: rgba(139, 139, 139, 0.1);
+	font-size: 87%;
 }
 
 pre
 {
-	border-left: 5px solid #dcdcdc;
-	margin-bottom: 10px;
-	padding: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    overflow: scroll;
+	background-color: rgba(139, 139, 139, 0.1);
+}
+
+pre > code {
+    background-color: transparent;
 }
 
 pre.api
 {
-	border: none;
 	margin: auto;
 	font-size: 16px;
-}
-
-p > code
-{
-	color: #BD402A;
 }

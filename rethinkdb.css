@@ -2,24 +2,20 @@ body
 {
 	-webkit-font-smoothing: antialiased;
 	font-family: 'Open Sans', sans-serif;
-	background: rgb(231,229,216);
-	color: rgb(88,87,85);
+	background: white;
+	color: #647276;
 }
 
 #wrapper
 {
-	max-width: 878px;
-	background: white;
 	padding: 2em;
-	border: 1px #ddd solid;
-	border-radius: 4px;
 	margin: 3em auto;
 }
 
 html>body
 {
-	font-size: 14px;
-	line-height: 1.5;
+	font-size: 16px;
+	line-height: 1.6;
 }
 
 hr
@@ -33,12 +29,13 @@ h1
 	font-size: 136%;
 	font-weight: normal;
 	text-rendering: optimizelegibility;
+	color: #214753;
 }
 
 h1.title
 {
 	font-size: 157%;
-	color: #72929e;
+	color: #214753;
 	border-bottom: thin solid #edebe3;
 	padding: 0 0 5px 0;
 	margin-bottom: 15px;
@@ -203,8 +200,7 @@ table tr:nth-child(even),table td:nth-child(even) { background: rgba(200,200,200
 
 pre, code
 {
-	font-size: 87.5%;
-	font-family: Monaco, Menlo, Consolas, monospace;
+	font-family: Inconsolata, monospace;
 	background-color: #f3f3f3;
 }
 
@@ -225,5 +221,4 @@ pre.api
 p > code
 {
 	color: #BD402A;
-	font-size: 77%;
 }

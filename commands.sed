@@ -9,5 +9,5 @@ s/^{% infobox.* %}/<div class="infobox">/
 s|^{% endinfobox %}|</div>|
 s|^{% apisection (.*) %}|<h1>\1</h1>|
 s|^{% endapisection %}||
-s|<img src="/assets/images/docs/api_illustrations/(.*)"|<img src="images/\1"|
+s|src="/assets/images/docs/api_illustrations/(.*)"|src="images/\1"|
 s|\]\((.*)/\)|](\1.html)|

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleIdentifier</key>
-	<string>reql.js</string>
+	<string>reqlpy</string>
 	<key>CFBundleName</key>
 	<string>ReQL for Python</string>
 	<key>DocSetPlatformFamily</key>

@@ -14,7 +14,7 @@ for docset in $docsets; do
     echo "starting $docset - copying assets"
     mkdir -p build/reql-$docset.docset/Contents/Resources/Documents/images
     cp rethinkdb.css build/reql-$docset.docset/Contents/Resources/Documents
-    cp $docset.plist build/reql-$docset.docset/Contents/Info.plist
+    cp plist/$docset.plist build/reql-$docset.docset/Contents/Info.plist
     cp icon.png build/reql-$docset.docset/icon.png
     cp $docroot/_images/api_illustrations/* \
         build/reql-$docset.docset/Contents/Resources/Documents/images

@@ -19,18 +19,22 @@ for docset in $docsets; do
     cp $docroot/_images/api_illustrations/* \
         build/reql-$docset.docset/Contents/Resources/Documents/images
 
+    echo "- initializing search index"
     db="build/reql-$docset.docset/Contents/Resources/docSet.dsidx"
     sqlite3 -line $db 'DROP TABLE IF EXISTS searchIndex;
         CREATE TABLE searchIndex(id INTEGER PRIMARY KEY, name TEXT, type TEXT, path TEXT);
         CREATE UNIQUE INDEX anchor ON searchIndex (name, type, path);'
 
-    echo "building HTML files and index"
+    echo "- building HTML files"
     for doc in $docroot/api/$docset/**/*.md; do
+        # extract human-readable command name from YAML header
         command=`sed -E -n -e "s/['\"]//g" -e "s/^command:[[:space:]]*(.*)/\1/p" \
             -e "/#/q" $doc`
-        sed -E -f commands.sed $doc | \
-        pandoc -o build/reql-$docset.docset/Contents/Resources/Documents/${doc:t:r}.html \
+        # Convert file from Markdown to HTML with sed and Pandoc
+        sed -E -f commands.sed $doc | pandoc -o \
+            build/reql-$docset.docset/Contents/Resources/Documents/${doc:t:r}.html \
             -t html5 -s --template=template.html
+        # Add to Dash search index
         values="('$command', 'Command', '${doc:t:r}.html')"
         if [[ -n $command ]]; then
             sqlite3 -line $db "INSERT OR IGNORE INTO searchIndex(name, type, path)

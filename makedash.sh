@@ -1,6 +1,6 @@
 #!/bin/zsh
 docsets=(javascript python ruby)
-docroot=../rethinkdb-www/docs
+docroot=../www/docs
 
 command -v pandoc >/dev/null 2>&1 || {
     echo >&2 "pandoc must be installed and on path ('brew install pandoc'?)";
@@ -16,7 +16,7 @@ for docset in $docsets; do
     cp rethinkdb.css build/reql-$docset.docset/Contents/Resources/Documents
     cp plist/$docset.plist build/reql-$docset.docset/Contents/Info.plist
     cp icon.png build/reql-$docset.docset/icon.png
-    cp $docroot/_images/api_illustrations/* \
+    cp $docroot/assets/images/docs/api_illustrations/* \
         build/reql-$docset.docset/Contents/Resources/Documents/images
 
     echo "- initializing search index"

@@ -1,5 +1,5 @@
 #!/bin/zsh
-docsets=(javascript python ruby)
+docsets=(javascript python ruby java)
 docroot=../www/docs
 
 command -v pandoc >/dev/null 2>&1 || {
@@ -30,15 +30,18 @@ for docset in $docsets; do
         # extract human-readable command name from YAML header
         command=`sed -E -n -e "s/['\"]//g" -e "s/^command:[[:space:]]*(.*)/\1/p" \
             -e "/#/q" $doc`
-        # Convert file from Markdown to HTML with sed and Pandoc
-        sed -E -f commands.sed $doc | pandoc -o \
-            build/reql-$docset.docset/Contents/Resources/Documents/${doc:t:r}.html \
-            -t html5 -s --template=template.html
-        # Add to Dash search index
-        values="('$command', 'Command', '${doc:t:r}.html')"
         if [[ -n $command ]]; then
+            # Convert file from Markdown to HTML with sed and Pandoc
+            sed -E -f commands.sed $doc | pandoc -o \
+                build/reql-$docset.docset/Contents/Resources/Documents/${doc:t:r}.html \
+                -t html5 -s --template=template.html
+            # Add to Dash search index
+            values="('$command', 'Command', '${doc:t:r}.html')"
             sqlite3 -line $db "INSERT OR IGNORE INTO searchIndex(name, type, path)
                 VALUES $values"
+            # Add index file
+            pandoc -o build/reql-$docset.docset/Contents/Resources/Documents/index.html \
+                -t html5 -s --template=template.html index/$docset.md
         fi
     done
 

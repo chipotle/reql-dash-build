@@ -24,5 +24,5 @@ s|^{% endapisection %}||
 # URL rewriters
 
 s|src="/assets/images/docs/api_illustrations/(.*)"|src="images/\1"|
-s|\]\(/api/[a-z]*/(.*)/\)|](\1.html)|
-s|\]\(/docs/(.*)/\)|](http://rethinkdb.com/docs/\1/)|
+s|/api/[a-z]*/(.*)/|\1.html|
+s|/docs/(.*)/|http://rethinkdb.com/docs/\1/|

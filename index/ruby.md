@@ -1,3 +1,7 @@
+---
+title: Ruby ReQL API
+---
+
 # RethinkDB Ruby ReQL API reference
 
 The Dash docset covers the complete Ruby ReQL API. The full [RethinkDB documentation](http://rethinkdb.com/docs/) has tutorials, examples, and detailed articles on the RethinkDB data model and ReQL in practice.

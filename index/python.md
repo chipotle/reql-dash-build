@@ -1,3 +1,7 @@
+---
+title: Python ReQL API
+---
+
 # RethinkDB Python ReQL API reference
 
 The Dash docset covers the complete Python ReQL API. The full [RethinkDB documentation](http://rethinkdb.com/docs/) has tutorials, examples, and detailed articles on the RethinkDB data model and ReQL in practice.

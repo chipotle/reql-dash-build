@@ -12,5 +12,7 @@
 	<true/>
 	<key>dashIndexFilePath</key>
 	<string>index.html</string>
+	<key>DashDocSetFallbackURL</key>
+	<string>https://rethinkdb.com/api/javascript/</string>
 </dict>
 </plist>

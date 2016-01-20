@@ -15,6 +15,7 @@ for docset in $docsets; do
     mkdir -p build/reql-$docset.docset/Contents/Resources/Documents/images
     cp rethinkdb.css build/reql-$docset.docset/Contents/Resources/Documents
     cp plist/$docset.plist build/reql-$docset.docset/Contents/Info.plist
+    cp json/$docset.json build/reql-$docset.docset/docset.json
     cp icon.png build/reql-$docset.docset/icon.png
     cp $docroot/assets/images/docs/api_illustrations/* \
         build/reql-$docset.docset/Contents/Resources/Documents/images

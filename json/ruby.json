@@ -1,0 +1,9 @@
+{
+    "name": "RethinkDB Ruby ReQL API",
+    "version": "2.2",
+    "archive": "reql-ruby.docset.tgz",
+    "author": {
+        "name": "RethinkDB",
+        "link": "https://rethinkdb.com"
+    }
+}

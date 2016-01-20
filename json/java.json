@@ -1,0 +1,9 @@
+{
+    "name": "RethinkDB Java ReQL API",
+    "version": "2.2",
+    "archive": "reql-java.docset.tgz",
+    "author": {
+        "name": "RethinkDB",
+        "link": "https://rethinkdb.com"
+    }
+}
